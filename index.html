@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="A portfolio showcasing my web development skills and projects."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, web developer, HTML, CSS, Tailwind, JavaScript, C++,  projects"
+    />
+    <meta name="author" content="Nitish Kumar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title of the page -->
+    <title>Nitish Portfolio</title>
+
+    <link rel="stylesheet" href="main.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            animation: {
+        'fade-in': 'fadeIn 2s ease-in-out',
+        'bounce-slow': 'bounce 3s infinite',
+        'pulse-slow': 'pulse 4s infinite',
+            },
+         keyframes: {
+            fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+            },
+         },
+
+         dropShadow :{
+            'custom-cyan': '2px 2px 20px cyan',
+            'custom-white': '2px 2px 20px rgba(255, 255, 255, 1)',
+         }
+      },
+   },
+   };
+    </script>
+  </head>
+  <body class="bg-slate-200 dark:bg-gray-800 dark:text-white">
+    <!-- Header section  -->
+    <header class="bg-transparent fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-indigo-500 dark:bg-black dark:text-white">
+      <div
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <!-- Logo Section -->
+        <div class="text-2xl font-bold">
+          <a href="#home" class="flex items-center">
+            <img class="h-10" src="./assets/favicon2.png" alt="Logo" />
+            <span class="ml-2">Portfolio</span>
+          </a>
+        </div>
+
+        <!-- Centered Theme Toggle Button -->
+        <div class="flex-grow text-center">
+          <button id="theme-toggle" class="inline-block">
+            <img
+              class="w-8 dark:drop-shadow-custom-white dark:invert dark:brightness-0 dark:opacity-80"
+              src="./assets/tongle theme.png"
+              alt="Theme Toggle"
+            />
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger Icon) -->
+        <button id="menu-btn" class="block md:hidden text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+
+        <!-- Desktop Navigation Links -->
+        <nav id="menu" class="hidden md:flex space-x-6">
+          <ul class="flex space-x-6 text-lg font-semibold">
+            <li><a href="#home" class="hover:text-gray-400">Home</a></li>
+            <li><a href="#about" class="hover:text-gray-400">About</a></li>
+            <li><a href="#skills" class="hover:text-gray-400">Skills</a></li>
+            <li>
+              <a href="#projects" class="hover:text-gray-400">Projects</a>
+            </li>
+            <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Mobile Navigation (Hidden by default, slide-down on click) -->
+      <div
+        id="mobile-menu"
+        class="max-h-0 overflow-hidden md:hidden flex-col mt-4 px-6 bg-indigo-600 dark:bg-black space-y-4"
+      >
+        <a href="#home" class="block text-lg font-medium hover:text-gray-300"
+          >Home</a
+        >
+        <a href="#about" class="block text-lg font-medium hover:text-gray-300"
+          >About</a
+        >
+        <a href="#skills" class="block text-lg font-medium hover:text-gray-300"
+          >Skills</a
+        >
+        <a
+          href="#projects"
+          class="block text-lg font-medium hover:text-gray-300"
+          >Projects</a
+        >
+        <a href="#contact" class="block text-lg font-medium hover:text-gray-300"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <!-- Task 3: Home Section -->
+    <section
+      id="home"
+      class="m-8 py-7 flex flex-col-reverse sm:flex-row justify-evenly items-center min-h-screen"
+    >
+      <!-- Left Content -->
+      <div
+        class="flex flex-col items-center md:items-start text-center md:text-left space-y-4"
+      >
+        <!-- Heading and Intro Text -->
+        <div class="text-base sm:text-lg lg:text-xl font-medium">
+          Hello, It's me
+        </div>
+        <div
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase text-blue-500 dark:text-teal-200 animate-fade-in"
+        >
+          Nitish Kumar
+        </div>
+        <div class="text-sm sm:text-lg md:text-xl">
+          I am a <b>Front-end Developer</b>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-4">
+          <a href="https://github.com/Nitish15032000" target="_blank">
+            <img
+              class="w-6 h-6 sm:w-8 sm:h-8 hover:scale-110 transition-transform duration-300"
+              src="./assets/github_536452.png"
+              alt="GitHub"
+            />
+          </a>
+          <a href="https://www.linkedin.com/in/nitish9117" target="_blank">
+            <img
+              class="w-6 h-6 sm:w-8 sm:h-8 hover:scale-110 transition-transform duration-300"
+              src="./assets/linkedin.png"
+              alt="LinkedIn"
+            />
+          </a>
+          <a href="https://www.instagram.com/nitish_9117/" target="_blank">
+            <img
+              class="w-6 h-6 sm:w-8 sm:h-8 hover:scale-110 transition-transform duration-300"
+              src="./assets/insta.png"
+              alt="Instagram"
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100058321959020"
+            target="_blank"
+          >
+            <img
+              class="w-6 h-6 sm:w-8 sm:h-8 hover:scale-110 transition-transform duration-300"
+              src="./assets/facebook.png"
+              alt="Facebook"
+            />
+          </a>
+        </div>
+
+        <!-- Download Resume Button -->
+        <div>
+          <button
+            class="bg-indigo-500 text-white px-4 py-2 sm:px-6 sm:py-3 mt-4 md:mt-6 rounded-md hover:bg-indigo-600 transition-colors duration-300 hover:shadow-lg"
+            type="button"
+          >
+            <a
+              href="https://drive.google.com/file/d/1IC_ECEz-nH4MquDjOCLffoQ80YEyQXHN/view?usp=drivesdk"
+              target="_blank"
+              >Download Resume</a
+            >
+          </button>
+        </div>
+      </div>
+
+      <!-- Profile Image -->
+      <div class="mt-6 md:mt-0">
+        <img
+          class="h-48 sm:h-56 md:h-64 lg:h-72 drop-shadow-custom-cyan dark:drop-shadow-custom-white transition-all duration-500 ease-in-out transform hover:scale-110"
+          src="./assets/IMG_20230403_100236_229-removebg.png"
+          alt="Profile Image"
+        />
+      </div>
+    </section>
+
+    <hr class="h-1 bg-black" />
+
+    <!-- Task 4: About Section -->
+    <section
+      id="about"
+      class="m-8 py-7 flex flex-col md:flex-row justify-between items-center min-h-screen"
+    >
+      <!-- Profile Image (Left for larger screens) -->
+      <div class="w-full md:w-1/2 lg:w-1/3 flex justify-center mt-8 md:mt-0">
+        <img
+          class="w-48 h-48 md:w-64 md:h-64 lg:w-full lg:h-auto rounded-full shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:scale-110"
+          src="./assets/nitish img 2.png"
+          alt="Profile Image of Nitish Kumar"
+        />
+      </div>
+
+      <!-- Right Content (Text) -->
+      <div
+        class="w-full md:w-1/2 lg:w-2/3 flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4 md:space-y-3"
+      >
+        <!-- Heading -->
+        <div
+          class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase text-blue-500 dark:text-teal-200"
+        >
+          About Me
+        </div>
+
+        <!-- About Content -->
+        <div class="text-base sm:text-lg md:text-xl">
+          <p class="text-sm sm:text-base md:text-lg">
+            I am <b>Nitish Kumar</b>, a <b>Front-end Developer</b> skilled in HTML, CSS, JavaScript, and React JS. I’ve developed responsive web projects, including an Portfolio website. I completed a Web Development internship at @Internpe and have knowledge of C++, Java, Python, and DSA problem-solving. Currently, I have completed my <b>BCA</b> at <b>MAKAUT University (CPI: 8.23)</b>.
+          </p>
+        </div>
+
+        <!-- Read More Button -->
+        <div>
+          <button
+            class="bg-indigo-500 text-white px-4 py-2 sm:px-6 sm:py-2 mt-6 rounded-md hover:bg-indigo-600 transition-colors duration-300 hover:shadow-lg"
+            type="button"
+          >
+            Read More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <hr class="h-1 bg-black" />
+
+    <!-- Task 5: Skills Section -->
+
+    <section id="skills" class="m-8 py-7">
+      <!-- Skills Section Heading -->
+      <div
+        class="text-3xl font-bold text-center uppercase mb-6 text-blue-500 dark:text-teal-200"
+      >
+        Skills
+      </div>
+
+      <!-- Skills with Progress Bars in two columns -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <!-- Skill 1: HTML -->
+        <div>
+          <h3 class="text-lg md:text-xl font-semibold">HTML</h3>
+          <div
+            class="w-full bg-gray-200 rounded-full h-3 md:h-4 dark:bg-gray-700"
+          >
+            <div
+              class="bg-indigo-500 h-3 md:h-4 rounded-full"
+              style="width: 90%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Skill 2: CSS -->
+        <div>
+          <h3 class="text-lg md:text-xl font-semibold">CSS</h3>
+          <div
+            class="w-full bg-gray-200 rounded-full h-3 md:h-4 dark:bg-gray-700"
+          >
+            <div
+              class="bg-indigo-500 h-3 md:h-4 rounded-full"
+              style="width: 80%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Skill 3: JavaScript -->
+        <div>
+          <h3 class="text-lg md:text-xl font-semibold">JavaScript</h3>
+          <div
+            class="w-full bg-gray-200 rounded-full h-3 md:h-4 dark:bg-gray-700"
+          >
+            <div
+              class="bg-indigo-500 h-3 md:h-4 rounded-full"
+              style="width: 70%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Skill 4: React -->
+        <div>
+          <h3 class="text-lg md:text-xl font-semibold">React</h3>
+          <div
+            class="w-full bg-gray-200 rounded-full h-3 md:h-4 dark:bg-gray-700"
+          >
+            <div
+              class="bg-indigo-500 h-3 md:h-4 rounded-full"
+              style="width: 65%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Skill 5: Java -->
+        <div>
+          <h3 class="text-lg md:text-xl font-semibold">Java</h3>
+          <div
+            class="w-full bg-gray-200 rounded-full h-3 md:h-4 dark:bg-gray-700"
+          >
+            <div
+              class="bg-indigo-500 h-3 md:h-4 rounded-full"
+              style="width: 75%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Skill 6: Python -->
+        <div>
+          <h3 class="text-lg md:text-xl font-semibold">Python</h3>
+          <div
+            class="w-full bg-gray-200 rounded-full h-3 md:h-4 dark:bg-gray-700"
+          >
+            <div
+              class="bg-indigo-500 h-3 md:h-4 rounded-full"
+              style="width: 80%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Skill 7: Git/GitHub -->
+        <div>
+          <h3 class="text-lg md:text-xl font-semibold">Git/GitHub</h3>
+          <div
+            class="w-full bg-gray-200 rounded-full h-3 md:h-4 dark:bg-gray-700"
+          >
+            <div
+              class="bg-indigo-500 h-3 md:h-4 rounded-full"
+              style="width: 85%"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Skill 8: MySQL -->
+        <div>
+          <h3 class="text-lg md:text-xl font-semibold">MySQL</h3>
+          <div
+            class="w-full bg-gray-200 rounded-full h-3 md:h-4 dark:bg-gray-700"
+          >
+            <div
+              class="bg-indigo-500 h-3 md:h-4 rounded-full"
+              style="width: 70%"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="h-1 bg-black" />
+
+    <!--  Task 6: Certifications Section (Provide at least 3 cards) -->
+    <section id="certifications" class="m-8 py-7">
+      <!-- Certifications Section Heading -->
+      <div
+        class="text-3xl font-bold text-center uppercase mb-6 text-blue-500 dark:text-teal-200"
+      >
+        Relevant Certifications
+      </div>
+
+      <!-- Certification Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Certification Card 1 -->
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-4">
+            Web Development Certification
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel
+            tincidunt eros, eget facilisis enim.
+          </p>
+          <a
+            href="#"
+            target="_blank"
+            class="inline-block bg-indigo-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-indigo-600 transition-colors duration-300 text-center"
+          >
+            View Certificate
+          </a>
+        </div>
+
+        <!-- Certification Card 2 -->
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-4">
+            Front-End Developer Certificate
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            efficitur dolor sit amet purus aliquam.
+          </p>
+          <a
+            href="#"
+            target="_blank"
+            class="inline-block bg-indigo-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-indigo-600 transition-colors duration-300 text-center"
+          >
+            View Certificate
+          </a>
+        </div>
+
+        <!-- Certification Card 3 -->
+        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
+          <h3 class="text-xl font-semibold mb-4">
+            JavaScript Mastery Certificate
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+            faucibus fermentum leo non scelerisque.
+          </p>
+          <a
+            href="#"
+            target="_blank"
+            class="inline-block bg-indigo-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-indigo-600 transition-colors duration-300 text-center"
+          >
+            View Certificate
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="h-1 bg-black" />
+
+    <!-- Task 7: Project Section (Provide at least 6-7 cards) -->
+
+    <section id="projects" class="m-8 py-7">
+      <!-- Projects Section Heading -->
+      <div
+        class="text-3xl font-bold text-center uppercase mb-10 text-blue-500 dark:text-teal-200"
+      >
+        Projects
+      </div>
+
+      <!-- Project Cards Container (Flexbox Layout) -->
+      <div class="flex flex-wrap justify-center gap-6">
+        <!-- Project 1 -->
+        <div
+          class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 dark:bg-gray-800 max-w-xs"
+        >
+          <img
+            src="./assets/pic 4.jpg"
+            alt="Project 1"
+            class="w-full h-40 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Nicco Water Park Blog</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+               Developed a Nicco water Park Blog website using HTML, CSS.
+            </p>
+            <a
+              href="https://your-project-link-1.com"
+              target="_blank"
+              class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-300 block text-center"
+            >
+              View Project
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 dark:bg-gray-800 max-w-xs"
+        >
+          <img
+            src="./assets/project2.jpg"
+            alt="Project 2"
+            class="w-full h-40 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Area Wise Diseases Analysis</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Used ML for disease analysis based on geographic data, using
+              Python.
+            </p>
+            <a
+              href="https://your-project-link-2.com"
+              target="_blank"
+              class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-300 block text-center"
+            >
+              View Project
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 dark:bg-gray-800 max-w-xs"
+        >
+          <img
+            src="./assets/nitish pic.jpg"
+            alt="Project 3"
+            class="w-full h-40 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Developed a personal portfolio website using HTML, CSS, and
+              JavaScript.
+            </p>
+            <a
+              href="https://your-project-link-3.com"
+              target="_blank"
+              class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-300 block text-center"
+            >
+              View Project
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div
+          class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 dark:bg-gray-800 max-w-xs"
+        >
+          <img
+            src="./assets/nitish pic.jpg"
+            alt="Project 3"
+            class="w-full h-40 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Developed a personal portfolio website using HTML, CSS, and
+              JavaScript.
+            </p>
+            <a
+              href="https://your-project-link-3.com"
+              target="_blank"
+              class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-300 block text-center"
+            >
+              View Project
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div
+          class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 dark:bg-gray-800 max-w-xs"
+        >
+          <img
+            src="./assets/nitish pic.jpg"
+            alt="Project 3"
+            class="w-full h-40 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Developed a personal portfolio website using HTML, CSS, and
+              JavaScript.
+            </p>
+            <a
+              href="https://your-project-link-3.com"
+              target="_blank"
+              class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-300 block text-center"
+            >
+              View Project
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div
+          class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 dark:bg-gray-800 max-w-xs"
+        >
+          <img
+            src="./assets/nitish pic.jpg"
+            alt="Project 3"
+            class="w-full h-40 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Developed a personal portfolio website using HTML, CSS, and
+              JavaScript.
+            </p>
+            <a
+              href="https://your-project-link-3.com"
+              target="_blank"
+              class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-300 block text-center"
+            >
+              View Project
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="h-1 bg-black" />
+    <!-- Task 8: Contact Section -->
+    <section id="contact" class="m-8 py-7">
+      <!-- Contact Section Heading -->
+      <div
+        class="text-3xl font-bold text-center uppercase mb-10 text-blue-500 dark:text-teal-200"
+      >
+        Contact
+      </div>
+
+      <!-- Contact Form -->
+      <div
+        class="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6 dark:bg-gray-800"
+      >
+        <form action="https://formspree.io/f/{your-form-id}" method="POST">
+          <!-- Name Input -->
+          <div class="mb-6">
+            <label
+              for="name"
+              class="block text-lg font-semibold mb-2 text-gray-700 dark:text-gray-300"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:text-gray-200"
+              placeholder="Enter your name"
+            />
+          </div>
+
+          <!-- Email Input -->
+          <div class="mb-6">
+            <label
+              for="email"
+              class="block text-lg font-semibold mb-2 text-gray-700 dark:text-gray-300"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:text-gray-200"
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <!-- Message Textarea -->
+          <div class="mb-6">
+            <label
+              for="message"
+              class="block text-lg font-semibold mb-2 text-gray-700 dark:text-gray-300"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-gray-700 dark:text-gray-200"
+              placeholder="Enter your message"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button
+              type="submit"
+              class="bg-indigo-500 text-white px-6 py-2 rounded-md hover:bg-indigo-600 transition-colors duration-300"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Task 8: Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+      <!-- Footer Content -->
+      <div class="container mx-auto flex flex-col items-center space-y-6">
+        <!-- Footer Heading (Optional) -->
+        <div class="text-xl font-bold text-center uppercase">Contact Me</div>
+
+        <!-- Contact Buttons -->
+        <div class="flex space-x-6">
+          <!-- Call Button -->
+          <a
+            href="tel:+916201944877"
+            class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-6 py-2 rounded-md transition-all duration-300"
+          >
+            Call
+          </a>
+
+          <!-- Email Button -->
+          <a
+            href="mailto:nitish.edu@gmail.com"
+            class="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-md transition-all duration-300"
+          >
+            Email
+          </a>
+        </div>
+
+        <!-- Copyright Info -->
+        <div class="text-gray-400 text-sm">
+          &copy; 2024 Nitish Kumar. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle mobile menu
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      let isOpen = false;
+
+      menuBtn.addEventListener("click", () => {
+        if (isOpen) {
+          mobileMenu.style.maxHeight = "0px"; // Close the menu
+        } else {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px"; // Open the menu to the full height
+        }
+        isOpen = !isOpen;
+      });
+
+      // JavaScript to toggle between dark and light mode
+      const toggleButton = document.getElementById("theme-toggle");
+      const htmlElement = document.documentElement;
+
+      htmlElement.classList.add("dark");
+      toggleButton.addEventListener("click", () => {
+        if (htmlElement.classList.contains("dark")) {
+          htmlElement.classList.remove("dark");
+        } else {
+          htmlElement.classList.add("dark");
+        }
+      });
+    </script>
+  </body>
+</html>
